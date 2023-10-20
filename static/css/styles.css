@@ -1,0 +1,49 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* use viewport height to ensure full screen coverage */
+
+}
+
+body, h1, h2, h3, h4, h5, h6, .btn, .form-control, label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+
+.navbar, .footer {
+    background-color: #F291C7;
+}
+
+.bg-gradient-custom {
+    background: linear-gradient(to right, #F1C2F2, #79D0F2); /* Gradient direction: left to right */
+}
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-light,
+.btn-dark,
+input {
+    background: linear-gradient(45deg, #f7def8, #aae0f6);
+    border: none !important;
+    color: white !important;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 15px !important;
+    /*font-weight: 600 !important;*/
+    transition: background 1s !important;
+
+    padding: 12px 24px 12px 24px !important;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+    background: linear-gradient(45deg, #F1C2F2, #79D0F2);
+    border: none;
+}

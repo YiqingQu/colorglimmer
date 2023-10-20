@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Accessibility Report</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="content">Upload your content:</label><br>
+    <textarea name="content" id="content" rows="4" cols="50" required></textarea><br><br>
+    <input type="submit" value="Generate Report">
+</form>
+
+{% if request.method == "POST" %}
+<div id="report-results">
+    <h3>Report Results:</h3>
+    <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
+    <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
+    <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
+</div>
+{% endif %}
+{% endblock %}

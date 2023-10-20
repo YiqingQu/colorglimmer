@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Image Recoloring</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="image">Upload an image:</label><br>
+    <input type="file" id="image" name="image" accept="image/*" required><br><br>
+    <input type="submit" value="Recolor Image">
+</form>
+
+{% if request.method == "POST" %}
+<div id="recoloring-results">
+    <h3>Recoloring Results:</h3>
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p><strong>Message:</strong> {{ message }}</p>
+    <!-- Display the recolored image if available -->
+    {% if recolored_image %}
+    <img src="{{ recolored_image.url }}" alt="Recolored Image">
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}
