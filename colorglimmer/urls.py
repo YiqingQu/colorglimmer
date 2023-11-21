@@ -16,17 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
 
 from app import views
+from colorglimmer import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('accessibility_report/', views.AccessibilityReportView.as_view(), name='accessibility_report'),
     path('image_recoloring/', views.ImageRecoloringView.as_view(), name='image_recoloring'),
+    path('upload_file/', views.upload_file, name='upload_file'),
 
     path('about/', views.AboutUsView.as_view(), name='about_us'),
     path('contact/', views.ContactUsView.as_view(), name='contact_us'),
     path('', views.IndexView.as_view(), name='index'),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

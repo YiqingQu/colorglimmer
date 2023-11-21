@@ -1,21 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Accessibility Report</h2>
+    <div class="container mt-3">
+        <h2 class="my-2">Accessibility Report</h2>
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="content">Upload your content:</label><br>
-    <textarea name="content" id="content" rows="4" cols="50" required></textarea><br><br>
-    <input type="submit" value="Generate Report">
-</form>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <img src="{{ image_url }}" alt="Accessibility Report Image" class="img-fluid">
+            </div>
+        </div>
+        <!-- Score Display -->
+        <div class="row">
+            <div class="col-12 my-2">
+                <p class="text-primary display-4">Score: 75</p>
+            </div>
+        </div>
 
-{% if request.method == "POST" %}
-<div id="report-results">
-    <h3>Report Results:</h3>
-    <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
-    <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
-    <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
-</div>
-{% endif %}
+        {% if request.method == "GET" %}
+            <div id="report-results my-5">
+                <h3>Report Results:</h3>
+
+                <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
+                <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
+                <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -31,7 +31,7 @@ body, h1, h2, h3, h4, h5, h6, .btn, .form-control, label {
 .btn-light,
 .btn-dark,
 input {
-    background: linear-gradient(45deg, #f7def8, #aae0f6);
+    background: linear-gradient(45deg, #f6caf8, #88d1ef);
     border: none !important;
     color: white !important;
     width: 200px;
@@ -44,6 +44,6 @@ input {
 }
 
 .btn:hover, .btn:active, .btn:focus {
-    background: linear-gradient(45deg, #F1C2F2, #79D0F2);
+    background: linear-gradient(45deg, #f1b5f3, #5dc5ee);
     border: none;
 }
