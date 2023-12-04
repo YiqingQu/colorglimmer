@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h2 class="my-2">Accessibility Report</h2>
+
+        <div class="row">
+            <div class="col-md-6 my-4" style="display: flex;">
+                <img src="{{ origin_url }}" alt="Accessibility Report Image" class="img-fluid">
+                <img src="{{ processed_url }}" alt="Accessibility Report Image" class="img-fluid">
+            </div>
+        </div>
+        <!-- Score Display -->
+        <div class="row">
+            <div class="col-12 my-2">
+                <p class="text-primary display-4">Score: {{ score }}</p>
+            </div>
+        </div>
+
+        {% if request.method == "GET" %}
+            <div id="report-results my-5">
+                <h3>Report Results:</h3>
+
+                <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
+                <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
+                <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
