@@ -5,14 +5,15 @@
         <h2 class="my-2">Accessibility Report</h2>
 
         <div class="row">
-            <div class="col-md-6 my-4">
-                <img src="{{ image_url }}" alt="Accessibility Report Image" class="img-fluid">
+            <div class="col-md-6 my-4" style="display: flex;">
+                <img src="{{ origin_url }}" alt="Accessibility Report Image" class="img-fluid">
+                <img src="{{ processed_url }}" alt="Accessibility Report Image" class="img-fluid">
             </div>
         </div>
         <!-- Score Display -->
         <div class="row">
             <div class="col-12 my-2">
-                <p class="text-primary display-4">Score: 75</p>
+                <p class="text-primary display-4">Score: {{ score }}</p>
             </div>
         </div>
 

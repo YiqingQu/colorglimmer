@@ -16,15 +16,5 @@
                 <p class="text-primary display-4">Score: {{ score }}</p>
             </div>
         </div>
-
-        {% if request.method == "GET" %}
-            <div id="report-results my-5">
-                <h3>Report Results:</h3>
-
-                <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
-                <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
-                <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
-            </div>
-        {% endif %}
     </div>
 {% endblock %}
