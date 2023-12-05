@@ -2,6 +2,7 @@ from colorglimmer import settings
 import cv2
 from PIL import Image
 import numpy as np
+from openai import OpenAI
 from skimage.metrics import structural_similarity as ssim
 import os
 from colorglimmer import settings
