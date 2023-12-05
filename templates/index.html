@@ -24,11 +24,11 @@
             <div class="col-lg-6 border text-center">
                 <div class="row mb-3">
                     <div class="col-lg-12 py-3 px-4">
-                        <a href="{% url 'accessibility_report' %}" class="btn btn-info">Report</a>
+                        <a href="#" id="reportLink" class="btn btn-info">Report</a>
                     </div>
                 </div>
                 <div class="col-lg-12 py-3 px-4">
-                    <a href="{% url 'accessibility_report' %}" class="btn btn-info">Score</a>
+                    <a href="#" id="scoreLink" class="btn btn-info">Score</a>
                 </div>
                 <div class="col-lg-12 py-3 px-4">
                     <a href="{% url 'accessibility_report' %}" class="btn btn-info">Detail</a>
@@ -39,7 +39,7 @@
             <div class="col-lg-6 border text-center">
                 <div class="row mb-3">
                     <div class="col-lg-12 py-3 px-4">
-                        <a href="{% url 'image_recoloring' %}" class="btn btn-warning">Modification Suggestions</a>
+                        <a href="#" id="modificationLink" class="btn btn-warning">Modification Suggestions</a>
                     </div>
                 </div>
                 <div class="row">
@@ -73,6 +73,9 @@
 
             if (file) {
                 reader.readAsDataURL(file); // Read the file
+                document.getElementById('reportLink').href = '{% url 'accessibility_report' %}?filename=' + encodeURIComponent(file.name); //Dynamically update the selected file
+                document.getElementById('scoreLink').href = '{% url 'score_report' %}?filename=' + encodeURIComponent(file.name); //Dynamically update the selected file
+                document.getElementById('modificationLink').href = '{% url 'modification_suggestion' %}?filename=' + encodeURIComponent(file.name); //Dynamically update the selected file
             }
         }
     </script>

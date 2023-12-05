@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Modification suggestions</h2>
+<div id="report-results my-5">
+                <h3>Report Results:</h3>
+
+                <p><strong>Color Assessment:</strong> {{ color_assessment }}</p>
+                <p><strong>Detailed Feedback:</strong> {{ detailed_feedback }}</p>
+                <p><strong>Modification Suggestions:</strong> {{ modification_suggestions }}</p>
+                <p><strong>Suggested RGB value:</strong> {{ suggested_RGB_value }}</p>
+                <img src="{{ modified_url }}" alt="Accessibility Report Image" class="img-fluid">
+            </div>
+{% endblock %}

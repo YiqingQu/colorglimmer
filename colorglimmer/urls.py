@@ -25,6 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('accessibility_report/', views.AccessibilityReportView.as_view(), name='accessibility_report'),
+    path('score_report/', views.ScoreReportView.as_view(), name='score_report'),
+    path('modification_suggestion/', views.ModificationSuggestion.as_view(), name='modification_suggestion'),
     path('image_recoloring/', views.ImageRecoloringView.as_view(), name='image_recoloring'),
     path('upload_file/', views.upload_file, name='upload_file'),
 
